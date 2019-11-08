@@ -6,41 +6,49 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Witty Calculator</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
 </head>
 <body>
-      <input type="text" class="inputsBox" id="inputsBox"><br>
-      <input type="text" class="resultBox" id="resultBox">
+  <div class="container">
+      <input type="text" class="inputBox" id="inputBox"><br>
+      <input type="text" class="resultBox" id="resultBox" disabled>
     <div>
-        <input class="numButton" type="button" value="C" onclick="cal.clearResultBox()">
-        <input class="numButton" type="button" value="()" onclick="cal.insertBrackets()">
-        <input class="numButton" type="button" value="%" onclick="cal.percentage('%')">
-        <input class="numButton" type="button" value="/" onclick="cal.operation('/')">
+        <button class="top-btn history" onclick="">HISTORY</button>
+        <button class="top-btn scale" onclick="">S</button>
+        <button class="top-btn sci-cal" onclick="">Sc</button>
+        <button class="top-btn backspace" onclick="">B</button>
     </div>
     <div>
-        <input class="numButton" type="button" value="7" onclick="cal.insertValue(7)">
-        <input class="numButton" type="button" value="8" onclick="cal.insertValue(8)">
-        <input class="numButton" type="button" value="9" onclick="cal.insertValue(9)">
-        <input class="numButton" type="button" value="X" onclick="cal.operation('*')">
+      <button class="btn edge-btn" onclick="cal.clear()">C</button>
+      <button class="btn edge-btn" onclick="cal.insertBrackets()">( )</button>
+      <button class="btn edge-btn" onclick="cal.percentage('%')">&percnt;</button>
+      <button class="btn edge-btn" onclick="cal.insertSymbol('/')">&divide;</button>
     </div>
     <div>
-        <input class="numButton" type="button" value="4" onclick="cal.insertValue(4)">
-        <input class="numButton" type="button" value="5" onclick="cal.insertValue(5)">
-        <input class="numButton" type="button" value="6" onclick="cal.insertValue(6)">
-        <input class="numButton" type="button" value="-" onclick="cal.operation('-')">
+      <button class="btn num-btn" onclick="cal.insertValue(7)">7</button>
+      <button class="btn num-btn" onclick="cal.insertValue(8)">8</button>
+      <button class="btn num-btn" onclick="cal.insertValue(9)">9</button>
+      <button class="btn edge-btn" onclick="cal.insertSymbol('*')">&times;</button>
+  </div>   
+    <div>
+      <button class="btn num-btn" onclick="cal.insertValue(4)">4</button>
+      <button class="btn num-btn" onclick="cal.insertValue(5)">5</button>
+      <button class="btn num-btn" onclick="cal.insertValue(6)">6</button>
+      <button class="btn edge-btn" onclick="cal.insertSymbol('-')">&minus;</button>
     </div>
     <div>
-        <input class="numButton" type="button" value="1" onclick="cal.insertValue(1)">
-        <input class="numButton" type="button" value="2" onclick="cal.insertValue(2)">
-        <input class="numButton" type="button" value="3" onclick="cal.insertValue(3)">
-        <input class="numButton" type="button" value="+" onclick="cal.operation('+')">
+      <button class="btn num-btn" onclick="cal.insertValue(1)">1</button>
+      <button class="btn num-btn" onclick="cal.insertValue(2)">2</button>
+      <button class="btn num-btn" onclick="cal.insertValue(3)">3</button>
+      <button class="btn edge-btn" onclick="cal.insertSymbol('+')">&plus;</button>
     </div>
     <div>
-        <input class="numButton" type="button" value="+/-" onclick="cal.signed()">
-        <input class="numButton" type="button" value="0" onclick="cal.insertValue(0)">
-        <input class="numButton" type="button" value="." onclick="cal.decimal()">
-        <input class="numButton" type="button" value="=" onclick="cal.computeResult()">
+      <button class="btn num-btn" onclick="cal.signed()">+/-</button>
+      <button class="btn num-btn" onclick="cal.insertValue(0)">0</button>
+      <button class="btn num-btn" onclick="cal.decimal('.')">.</button>
+      <button class="btn answer-btn" onclick="cal.compute()">=</button>
     </div>
-
+  </div>
     <script src="script.js"></script>
 </body>
 </html>
