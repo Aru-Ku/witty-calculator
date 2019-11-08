@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Witty Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+      <input type="text" class="inputsBox" id="inputsBox"><br>
+      <input type="text" class="resultBox" id="resultBox">
+    <div>
+        <input class="numButton" type="button" value="C" onclick="cal.clearResultBox()">
+        <input class="numButton" type="button" value="()" onclick="cal.insertBrackets()">
+        <input class="numButton" type="button" value="%" onclick="cal.percentage('%')">
+        <input class="numButton" type="button" value="/" onclick="cal.operation('/')">
+    </div>
+    <div>
+        <input class="numButton" type="button" value="7" onclick="cal.insertValue(7)">
+        <input class="numButton" type="button" value="8" onclick="cal.insertValue(8)">
+        <input class="numButton" type="button" value="9" onclick="cal.insertValue(9)">
+        <input class="numButton" type="button" value="X" onclick="cal.operation('*')">
+    </div>
+    <div>
+        <input class="numButton" type="button" value="4" onclick="cal.insertValue(4)">
+        <input class="numButton" type="button" value="5" onclick="cal.insertValue(5)">
+        <input class="numButton" type="button" value="6" onclick="cal.insertValue(6)">
+        <input class="numButton" type="button" value="-" onclick="cal.operation('-')">
+    </div>
+    <div>
+        <input class="numButton" type="button" value="1" onclick="cal.insertValue(1)">
+        <input class="numButton" type="button" value="2" onclick="cal.insertValue(2)">
+        <input class="numButton" type="button" value="3" onclick="cal.insertValue(3)">
+        <input class="numButton" type="button" value="+" onclick="cal.operation('+')">
+    </div>
+    <div>
+        <input class="numButton" type="button" value="+/-" onclick="cal.signed()">
+        <input class="numButton" type="button" value="0" onclick="cal.insertValue(0)">
+        <input class="numButton" type="button" value="." onclick="cal.decimal()">
+        <input class="numButton" type="button" value="=" onclick="cal.computeResult()">
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
