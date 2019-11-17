@@ -15,9 +15,10 @@ body {
   font-family: "Supermercado One", cursive;
   margin-top: 11px;
   margin-bottom: 5px;
-  color: #3F51B5;
+  color: #3F51B5
 }
-.resultBox, .inputBox {
+.resultBox,
+.inputBox {
   margin: auto;
   width: 90%;
   text-align: right;
