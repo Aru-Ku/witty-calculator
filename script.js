@@ -1,24 +1,68 @@
-var inputBox = document.getElementById("inputBox");
-var resultBox = document.getElementById("resultBox");
-var inputs = [];
-var value = "";
+const inputBox = document.getElementById("inputBox");
+const resultBox = document.getElementById("resultBox");
+var inputs = []; // stores the inputs from the keys
+var value = ""; // stores 
+var l1 = 0, l2 = 0;
 
 var cal = {
   insertValue: function(data) {
     value += data;
+    this.updateInputBox(data);
   },
   insertOperator: function(op) {
-    if(value != "") { inputs.push(parseInt(value)); }
-    value = "";
-    inputs.push(op);
+    if(value != "") {
+      inputs.push(parseFloat(value));
+      value = "";
+    }
+    l1 = inputs.length;
+    if((inputs[l1-1] == '+') || (inputs[l1-1] == '-') || (inputs[l1-1] == '*') ||
+       (inputs[l1-1] == '/') || (inputs[l1-1] == '%') || (inputs[l1-1] == '.')) {
+      inputs[l1-1] = op;
+      this.updateInputBox('?');
+    } else {
+      inputs.push(op); 
+    }
+    this.updateInputBox(op);
   },
   insertDecimal: function() {
-    
+    if(!value.includes('.')) {
+      value += '.';
+    }
+    this.updateInputBox('.');
+  },
+  backspace: function() {
+    l1 = inputs.length;
+    l2 = value.length;
+    resultBox.value = "";
+    if((inputs[l1-1] == '+') || (inputs[l1-1] == '-') || (inputs[l1-1] == '*') ||
+       (inputs[l1-1] == '/') || (inputs[l1-1] == '%') || (inputs[l1-1] == '.')) {
+      value += inputs[l1-2];
+      inputs = inputs.splice(0, l1-2);
+    } else {
+      value = value.substring(0, l2-1);
+    }
+    this.updateInputBox('?');
   },
   finalExe: function() {
-    if(value != "") { inputs.push(parseInt(value)); }
-    value ="";
-    resultBox.value = evaluate(inputs);;
+    if(value != "") { inputs.push(parseFloat(value)); }
+    resultBox.value = evaluate(inputs);
+    value = "";
+    value += inputs[0];
+    inputs = [];
+  },
+  clear: function() {
+    inputBox.value = "";
+    resultBox.value = "";
+    inputs = [];
+    value = [];
+  },
+  updateInputBox: function(str) {
+    if(str == '?') {
+      console.log(inputBox.value);
+      inputBox.value = inputBox.value.substring(0, inputBox.value.length-1);
+    } else {
+      inputBox.value += str;
+    }
   }
 };
 
