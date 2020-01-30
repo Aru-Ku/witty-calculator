@@ -1,45 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-    <title>Witty Calculator</title>
-    <link rel="stylesheet" href="./style.css">
-    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Calculator | Capstone Project</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
-  <div class="view">
-      <input type="text" class="inputBox" id="inputBox" disabled><br>
-      <input type="text" class="resultBox" id="resultBox" disabled>
-  </div>
-  <div class="container">
-      <button class="btn edge-btn" id="clear"></button>  <!-- Empty Button for now.-->
-      <button class="btn edge-btn" onclick="cal.clear()">CE</button>
-      <button class="btn edge-btn" onclick="cal.backspace()">
-        <i class="material-icons">backspace</i>
-      </button>
-      <button class="btn edge-btn" onclick="cal.insertOperator('/')">&divide;</button>
-    
-      <button class="btn num-btn" onclick="cal.insertValue('7')">7</button>
-      <button class="btn num-btn" onclick="cal.insertValue('8')">8</button>
-      <button class="btn num-btn" onclick="cal.insertValue('9')">9</button>
-      <button class="btn edge-btn" onclick="cal.insertOperator('*')">&times;</button> 
-    
-      <button class="btn num-btn" onclick="cal.insertValue('4')">4</button>
-      <button class="btn num-btn" onclick="cal.insertValue('5')">5</button>
-      <button class="btn num-btn" onclick="cal.insertValue('6')">6</button>
-      <button class="btn edge-btn" onclick="cal.insertOperator('-')">&minus;</button>
-    
-      <button class="btn num-btn" onclick="cal.insertValue('1')">1</button>
-      <button class="btn num-btn" onclick="cal.insertValue('2')">2</button>
-      <button class="btn num-btn" onclick="cal.insertValue('3')">3</button>
-      <button class="btn edge-btn" onclick="cal.insertOperator('+')">&plus;</button>
-
-      <button class="btn num-btn" onclick="cal.insertDecimal('.')">.</button>
-      <button class="btn num-btn" onclick="cal.insertValue('0')">0</button>
-      <button class="btn num-btn" onclick="cal.insertOperator('%')">&percnt;</button>
-      <button class="btn answer-btn" onclick="cal.finalExe()">=</button>
-  </div>
-    <script src="./script.js"></script>
+    <div class="container">
+        <div class="info">This is a simple app representing a calculator (Capstone Project).</div>
+        <input type="text" class="input" value="0" style="font-size: 55px; padding: 80px 50px 15px 10px;" disabled>
+        <input type="text" class="result" value="0" style="font-size: 35px; padding: 30px 50px 40px 10px;" disabled>
+        <input type="button" class="btn side" value="C">
+        <input type="button" class="btn side" value="÷">
+        <input type="button" class="btn side" value="x">
+        <input type="button" class="btn side material-icons" value="backspace">
+        <input type="button" class="btn" value="7">
+        <input type="button" class="btn" value="8">
+        <input type="button" class="btn" value="9">
+        <input type="button" class="btn side" value="-">
+        <input type="button" class="btn" value="4">
+        <input type="button" class="btn" value="5">
+        <input type="button" class="btn" value="6">
+        <input type="button" class="btn side" value="+">
+        <input type="button" class="btn" value="1">
+        <input type="button" class="btn" value="2">
+        <input type="button" class="btn" value="3">
+        <input type="button" class="btn side" value="=">
+        <input type="button" class="btn" value="%">
+        <input type="button" class="btn" value="0">
+        <input type="button" class="btn" value=".">
+    </div>
+    <script src="script.js"></script>
 </body>
 </html>
